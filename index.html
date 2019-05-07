@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- injection du ng-app -->
+<html lang="fr" dir="ltr" ng-app="carApp" >
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Exercice 1</title>
+    </head>
+    <body>
+        <div class="jumbotron text-center">
+            <h1 class="display-3">Exercice4 P4</h1>
+            <p class="lead">Faire une page HTML permettant d'afficher la liste des voitures et leur couleur du fichier voiture.json.</p>
+        </div>
+        <div class="container text-center d-flex justify-content-center" ng-controller="carCtrl">
+            <table cellspacing="2px" cellpadding="2px;" rules="all" style="border:solid 1px black;">
+                <thead>
+                    <th>Marques</th>
+                    <th>Couleurs</th>
+                </thead>
+                <tr ng-repeat="x in marques" ng-if="x.couleur !== 'verte'">
+                    <td>
+                        {{x.marque}}
+                    </td>
+                    <td>
+                        {{x.couleur}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
